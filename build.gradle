@@ -14,7 +14,8 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testImplementation 'io.rest-assured:rest-assured:5.5.1'
     testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.19.0'
-    implementation 'org.seleniumhq.selenium:selenium-java:4.31.0'
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.31.0'
+    testImplementation 'org.aeonbits.owner:owner:1.0.12'
 
     compileOnly("org.projectlombok:lombok:1.18.38")
     annotationProcessor("org.projectlombok:lombok:1.18.38")
@@ -25,4 +26,5 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    systemProperties(System.getProperties())
 }
