@@ -11,6 +11,13 @@ jobs:
       contents: write
       pages: write
 
+    services:
+      selenium:
+        image: selenium/standalone-chrome:latest
+        options: --shm-size 2g
+        ports:
+          - 4444:4444
+
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 17
@@ -26,6 +33,8 @@ jobs:
       run: chmod +x gradlew
 
     - name: Build with Gradle Wrapper
+      env:
+        SELENIUM_REMOTE_URL: http://localhost:4444/wd/hub
       run: ./gradlew test -Denv=test
 
     - name: Copy History
