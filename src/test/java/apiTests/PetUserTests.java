@@ -29,7 +29,7 @@ public class PetUserTests {
         String userEndpoint = "user";
         String body = """
            {
-             "id": 0,
+             "id": 1,
              "username": "string",
              "firstName": "string",
              "lastName": "string",
